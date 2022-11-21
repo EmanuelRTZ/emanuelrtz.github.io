@@ -46,3 +46,10 @@
   box-shadow: 0 0 5px 5px #b20403;
   border-radius: 30px 25px 60px 12px;
  }
+
+ .contents {
+  border-radius: 30px 30px 30px 30px;
+-moz-border-radius: 30px 30px 30px 30px;
+-webkit-border-radius: 30px 30px 30px 30px;
+border: 0px solid #000000;
+ }
