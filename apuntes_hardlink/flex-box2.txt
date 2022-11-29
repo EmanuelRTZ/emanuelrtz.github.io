@@ -1,0 +1,67 @@
+Flex-box: https://flexboxfroggy.com/#es
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+display: flex;	para empezar a usar flex
+
+justify-content: alinea elementos horizontalmente.
+				 
+				 flex-start: Alinea elementos al lado izquierdo del contenedor.
+				 flex-end: Alinea elementos al lado derecho del contenedor.
+				 center: Alinea elementos en el centro del contenedor.
+				 space-between: Muestra elementos con la misma distancia entre ellos.
+				 space-around: Muestra elementos con la misma separación alrededor de ellos.
+				 
+
+align-items: alinea elementos vericalmente.
+
+				flex-start: Alinea elementos a la parte superior del contenedor.
+				flex-end: Alinea elementos a la parte inferior del contenedor.
+				center: Alinea elementos en el centro (verticalmente hablando) del contenedor.
+				baseline: Muestra elementos en la línea base del contenedor
+				stretch: Elementos se estiran para ajustarse al contenedor.
+				
+flex-direction: define la dirección de los elementos en el contendor.
+
+				row: Elementos son colocados en la misma dirección del texto.
+				row-reverse: Elementos son colocados en la dirección opuesta al texto.
+				column: Elementos se colocan de arriba hacia abajo.
+				column-reverse: Elementos se colocan de abajo hacia arriba.
+	*cuando uso reverse, flex-end y start se invierten.
+	*cuando uso column justify-content y align-items se invierten en loque hacen cada una.
+	
+order: para elementos individuales, por defecto los elementos tienen un valor de order 0, se puede usar números enteros positivos o negativos para indicar las posiciones de los elementos.
+
+align-self: acepta los mismo valores que align-items y sus valores son usados para un elemento específico.
+
+
+flex-wrap: decide de qué forma se van a distribuir elementos que no entran correctamente en el tamaño del contenedor.
+
+				nowrap: Cada elemento se ajusta en una sola línea.
+				wrap: los elementos se envuelven alrededor de líneas adicionales.
+				wrap-reverse: Los elementos se envuelven alrededor de líneas adicionales en reversa.	
+
+flex-flow:	es una combinación de flex-direction flew-wrap.
+
+sintaxis: se ponen los dos valores separados por un espacio.
+
+#rana {
+	display: flex;
+	flex-flow: column-reverse nowrap,
+}
+
+
+align-content: establece la fomra en que múltiples líneas se separan unas de otras. align-content determina el espacio entre las líneas, mientras que align-items determina como los elementos en su conjunto están alineados dentro del contenedor. Cuando hay solo una línea, align-content no tiene efecto.
+
+				flex-start: Las líneas se posicionan en la parte superior del contenedor.
+				flex-end: Las líneas se posicionan en la parte inferior del contenedor.
+				center: Las líneas se posicionan en el centro (verticalmente hablando) del contenedor.
+				space-between: Las líneas se muestran con la misma distancia entre ellas.
+				space-around: Las líneas se muestran con la misma separación alrededor de ellas.
+				stretch: Las líneas se estiran para ajustarse al contenedor.
+				
+
+				
+
+				
+				
+

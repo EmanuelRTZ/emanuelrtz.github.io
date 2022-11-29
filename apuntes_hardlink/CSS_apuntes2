@@ -1,0 +1,44 @@
+Notas de CSS en Platzi
+
+*{
+  box-sizing: border-box;
+}
+
+	**los elementos no toman dimensiones adicionales, no se salen de las cajas.
+	
+	
+list-style: none;			**los elementos de las listas dejan de tener puntitos o num
+justify-content: space-around; ** los elementos de una caja tienen espacios entre ellos
+display: inline-block;		** para que no ocupe toda la linea entera
+justify-content: center;	** justificar contenido al centro
+
+a{text-decoration: none;}	**Para que los hipervínculos no estén subrayados
+float						**Ubica a los elementos en el lado izq o der de su contenedor
+
+Herencia
+	Es el código que pasa de un padre a un hijo.
+inherit => es heredado, se puede indicar para que un elemento tome propiedades de sus padres.
+
+Importancia:
+	Si existen dos declaraciones sobre el mismo elemento con igual importancia, se le
+	dará prioridad a la que tenga mayor especificidad.
+	si dos declaraciones sobre el mismo elemento tienen la misma especificidad
+	e importancia, el órden en que aparezcan será el que decida cuál usar.
+
+	importancias:
+		*config del navegador
+		*nuestro .css
+		*!important declarado por nosotros
+	https://www.codecaptain.io/tools/css-specificity-calculator?#
+		
+Por ej: si uso una clase y no toma la config, puede que usando dos clases consecutivas
+funcione ya que dos clases aumenta la especificidad.
+
+CSS tiene orden de cascada por lo que los estilos indicados en la última parte del
+archivo son los que van a ser tenidos en cuenta por el navegador. ciudado
+
+escribir varias líneas a la vez en CSS:
+	header>nav>ul>li*4>a + TAB  para una lista de cuatro links
+	div>li*4					para cuatro elementos de lista
+		
+

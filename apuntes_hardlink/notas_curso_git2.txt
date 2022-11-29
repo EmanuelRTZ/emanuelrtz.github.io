@@ -1,0 +1,215 @@
+lista de comandos en git
+
+git init	
+	estando en la carpeta donde queremos que se cree el repositorio de git, se genera automáticamente.
+	
+se crea el repositorio pero la carpeta .git está oculta.
+cuando usamos un archivo que se encuentra en esta carpeta VScode detecta que este pertenece a un repositorio.
+
+*HEAD Es un indicador de dónde estoy situado, dependiendo de la rama en que me encuentre.
+*master es la rama principal
+git status		me dice el estado del repositorio
+git add nombre_del_archivo ó "git add ."  agrega todo lo que haya en la carpeta de git
+git rm 'nombre_del_archivo' 	quita el archivo de la git y lo deja en caché (en la RAM)
+git rm --cached					quita rl archivo de la RAM y definitivamente del repositorio
+git commit						envía los cambios del staged al repositorio
+git commit -m "texto" 			sube el archivo comentado
+git config --global user.email "direccion_email" guarda la dirección de identidad mia
+git config --global user.name "nombre"			 guarda mi nombre
+git config 						muestra el listado de las configuraciones posibles
+git config --list 				muestra las configuraciones actuales
+git add ~/Escritorio/Platzi/GIT/proyecto1/		actualiza la git a todos los cambios realizados en los archivos
+es lo mismo que git add . estando en la carpeta del repositorio
+git log nombre_del_archivo		muestra el historial de cambios que sufrio ese archivo. /*Antes hacer el add*/
+git log --stat nombre_del_archivo mas específico
+
+*** primero se hace el add luego el commit***
+
+git show nombre_del_archivo		muestra los cambios realizados en profundidad, lo que se agregó y quitó. Solo muestra la ID del último commit
+git diff n°decommitA n°decommitB (los obtengo con el git log) muestra los cambios entre las versiones seleccionadas, respetar el orden.
+git diff 						Muestra los cambios para todo archivo que haya sido cambiado
+git brach 						permite crear una rama nueva (development, hot fix, etc)
+git branch new_branch			
+git branch -d					borra rama
+git checkout new_branch
+	HEAD es la última versión principal (sin ninguna rama, la main)
+	merge es el proceso por el que se pasa de alguna rama secundaria a la HEAD
+git reset n°commit 				vuelve el tiempo atrás del archivo seleccionado. Borra también los commits posteriores.
+git reset --hard 				Borra toda la información del staging y los commits
+git reset --soft 				todo lo que está en el staging, lo que se le dio add pero aún no tiene commit sigue vivo y es posible guardarlo.
+git checkout n°commit			Vuelve el estado del archivo a ese tiempo. ojo, si hacemos commit luego borramos los cambios posteriores.
+git checkout master				vuelve a la última versión.
+git rm --cached 				elimina el archivo del repositorio y del área de staging, pero no el archivo en disco
+git rm --force					elimina archivo del disco
+git reset HEAD					elimina los últimos cambios realizados en el staging (es lo opuesto a hacer add .)
+
+***** comando para git en remoto ******
+git clone url			copia los archivos del server a la carpeta local y también el registro de git de los cambios históricos.
+git push				lleva los cambios de mi repositorio al directorio del servidor e informa los cambios.
+git fetch				trae del server una copia de los cambio realizados (del git) (no hace una copia de los archivos a mi pc)
+git merge				luego del fetch SI copia los archivos a mi pc local
+git pull 				combina las acciones de fetch y merge, trae la actualización de la carpeta del server a mi pc.
+**** cambiar de branch *****
+git branch nombre_rama 		crea una rama, pero no me cambia a esta
+git checkout nombre_rama 	me cambia a esta rama de trabajo
+git checkout -b nombre_rama	la combinación de ambas
+
+	*si cambio de rama, realizo cambios en archivos y los reviso con show y status el git me los va a mostrar. Pero, si vuelvo 
+	a la rama master sin hacer un push, los cambios solo se veran en tanto esté en la rama creada.
+	Cambiando a la rama master sin haber hecho el push los archivos vuelven al estado del HEAD master.
+***** fusionar ramas *****
+guardar siempre los cambios antes de hacer git checkout
+git merge nombre_rama
+	Normalmente estando situados en la rama master, sirve para traer todos los cambios que se hayan realizado en ramas
+	secundarias para ser fusionados con el estado de los archivos de la rama master. 
+	También se usa desde una rama secundaria para guardar los cambios de un repositorio remoto en nuestra PC haciéndolo en el
+	sentido opuesto.
+	Una vez solucionado un conflicto debemos quedarnos con lo que queremos y hacer commut -am
+git merge --abort 		cancelar el merge
+
+***** git-hub *****
+	en git-hub se cambió la palabra "master" por "main"
+	En https://github.com/settings/repositories cambié a master para no tener problemas con el video
+*crear repositorio y copiar su http url para configurarlo como repositorio remoto
+Agregar un origen remoto de nuestro repositorio:
+
+git remote add origin https://github.com/EmanuelRTZ/Desarrollo-Web-principiante.git (para mi repositorio desarrollo web)
+git remote remove origin 		(para borrarlo en caso de cambiar de repositorio)
+git remote -v 					para checar la url a la que se está enviarndo o pidiento data
+para generar un token en github: https://github.com/settings/tokens
+				<---->			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			
+git push origin master 			para pushear a github mi repositorio (al proncipio da error porque tienen estructuras diferentes).
+git pull origin master			para hacer una copia del repo de GH en mi pc (no lo hace, me pide especidicación de cómo hacerlo)
+git config pull.rebase false	tuve que hacer esta configuración por el error de cómo conciliar las ramas
+git pull origin master --allow-unrelated-histories 
+								para traer lo de GH a mi Pc
+git config -l					para ver las configuraciones de cuenta y demás
+** En GH puedo hacer cambios directamente a los archivos y nos permite hacer commit con comentario y ramas.
+
+***** SSH *****
+SHA256:hW7gwciOP4x7D9v8gj/qj0A4k/hCOvvlQr9f8duZEds emmanuel.ortiz64@gmail.com
+la llave se generó en ~ en la carpeta .ssh
+eval $(ssh-agent -s)			evaluar si está corriendo el servidor de ssh ==> 17165
+ssh-add ~/.ssh/id_rsa								agregar la llave a nuestro servidor
+***** conectar GH con nuestra SSH ****
+Agregar la ssh pública en la configuración de GH
+git remote set-url origin git@github.com:EmanuelRTZ/Desarrollo-Web-principiante.git		para cambiar la url de origin
+*** tags ***
+git log --all --graph --decorate --oneline		muestra un cambio un tanto gráfico de los cambios y ramas
+en linux puedo guardar listas de comandos como alias, con el comando
+alias nombre_del_alias="comandos que queremos guardar"
+luego con nombre_del_alias hago lo mismo como si fuera un macro
+guardado como alias "arbolito"
+
+TAGs: usa la id del commit para signar el estado de la versión del programa en determinado momento.
+con un tag podemos por ejemplo signar la versión 1.0, 2.0, etc y dejar las marcas en GH.
+
+**copiar el hash del commit
+git tag -a v0.1 -m "mensaje descriptivo" hash_del_commit	(v0.1 es una versión arbitraria)
+git tag 						para ver el listado de tags existentes
+git show-ref --tags				para ver lo mismo en profundidad
+git push origin --tags			para enviar a origin los tags que fuimos generando 
+git tag -d nombre_del_tag		para eliminarlo (recordar pullear y pushear para compartir cambios)
+
+***** Manejo de ramas en Git-Hub *****
+	**** GITK es una aplicación con GUI en Linux que ya tenfo instalda ****
+git push origin nombre_de_la_rama 		para enviar la rama a GH
+Pasos:
+	generar los cambios desde las ramas pertinentes en local.
+	pullear la misma rama desde GH siempre antes
+	pushear la misma rama a GH
+	desde el master en local podemos hacer merge de los cambios de la rama paralela para unir los cambios
+
+*** Pull Request ***
+Es un paso previo a hacer el merge desde una branch secundaria hacia una principal como es la master.
+No es propio de Git sino de GitHub. Se trata de una solicitud que espera a ser aprobada.
+La pueden hacer personas que no pertenezcan al proyecto, en forma de colaboración.
+
+**** deploy ****
+Es como un pull pero a un servirdor en donde tengo los archivos de, por ejemplo, una página web.
+Se usa la url del repositorio de GH. No es lo mismo que un desarrollador tenga una copia del origin master final que 
+estos datos se encuentren en un servidor para que funcione la página web.
+**** ignorar archivos *****
+.gitignore	es el nombre con el que hay que guardar los archivos que no quiere que se agreguen al repositorio.
+También se pueden ocultar todos los archivos que tengan determinada extensión como porej .jpg
+puedo subir imágenes a imgur.com	
+
+**** Subir página web a pages.github ****
+https://platzi.com/clases/1557-git-github/19976-tu-sitio-web-publico-con-github-pages/
+pages.github.com
+Crear un repositorio con el nombre igual al nombre de usuario en GH.
+git clone enlace_que_me_da_github 
+crear un archivo que se llame index.html
+git commit -al "comentario"
+git pull origin master
+git push origin master
+cambiar el  nombre del repositorio a EmanuelRTZ.github.io
+ir a las configuraciones del repositorio, en github pages elegir que tome la raiz master o main.
+
+**** Git Rebase *****
+Sirve para tomar el hisotirial de todos los cambios realizados en una rama alternativa, ponerlos como cambios propios de la rama maestra y eliminar la rama. De esta forma parece como si los cambios nunca se hayan hecho fuera de la rama principal.
+
+Desde la rama en la que quiero traer los cambios:
+git rebase rama_principal		(en el ejemplo trae los cambios de la master a la experimental)
+Desde la rama principal
+git rebase rama_secundaria		(toma los cambios de la rama secundaria hacia la master)
+siguen guardados los IDs de las modificaciones que se hicieron pero no aparece como si otra rama los hubiera hecho.
+git brach -D nombre_rama_temporal		para eliminar definitivamente la rama
+
+**** git stash ****
+git stash 				para volver al último commit en caso de haber tocado algo y preferir volver al último estado
+git stash 				en caso de haber realizado cambios que quiero mantener pero no hacerle commit aún
+git stash branch nombre_rama	para stashear esos cambios en una rama diferente a la actual
+git stash list 			para ver un listado de los stashings que se hicieron
+git stash pop			para eliminar los últimos cambios agegados al stash y volver al estado previo
+git stash pop stash@{número_de_stash} para eliminar determinado stash
+
+https://platzi.com/clases/1557-git-github/19984-stash/
+
+**** git clean ****
+borra todo archivo que no sea trackeado, archivos duplicados o agregados por error.
+No actua sobre carpetas o sobre archivos que fueron agregados como excepciones a gitignore.
+git clean				da error porque necesitamos especificar cómo actuar
+git clear --dry-run 	para revisar el listado de archivos que no tienen seguimiento
+git clean -f			para eliminar todo lo que pueda.
+git clean -d 			para incluir directorios
+gir clean -x			para incluir archivos ignorados, se recomienda hacer dry run antes para verificar
+
+**** cherry pick  *****
+sirve para pickear determinado commit de una rama paralela.
+git cherry-pick n°commit	para tomar los cambios agegados en otras ramas sin hacer merge.
+
+**** git reflog -para emergencias ****
+git reflog muestra el listado de los logs, sin excluir los resets que se hayan hecho como en el caso de git log.
+
+**** git amend ****
+git add nombre_archivo para agregar los cambios necesario al staging
+git commit --amend		sirve para agregar cambios al commit anterior sin crear un tag nuevo, permite modificar el comentario
+*los cambios tienen que ser agregados al stage para poder hacer amend
+
+**** grep ****
+git grep palabra_a_buscar		para mostrar dónde se utilizó esa palabra
+git grep -c palabra_a_buscar 	para que nos dé un conteo de las veces que la usé en cada lugar
+git grep "<p>" 					las comillas para buscar cosas que son pedazo de código
+git log -S "palabra"			busca entre los logs de git, no en el contenido de los archivos
+
+**** alias en git ****
+git shortlog					Muestra un listado de los commits que hicieron cada persona o usuario
+git shortlog -sn --all			Muestra todos los commits, incluso los que fueron borrados
+git shortlog -sn --all --no-merges			excluye los merges
+ 	Crear alias
+ 	git config --global alias.nombre_del_alias "comandos_a_guardar" 		para fabricar un nuevo alias global en git
+git comandos_a_guardar 			para ver el alias guardado (sin el git adelante no es un alias de git, sino de linux)
+
+
+
+
+
+
+
+
+
+
+
+
+

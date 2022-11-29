@@ -1,0 +1,75 @@
+HTML y CSS
+	target="_blank"	<!-- para hacer que un hipervínulo abra una nueva ventana --->
+	las imágenes losless (gif, png, svg) son las que no se comprimen por lo tanto son más pesadas
+	las imágenes losy son las que pueden ser comprimidas por el navegador (jpg)
+** tinypng es una página que reduce imágenes para que queden en un peso ideal
+** vrefix  es una página web que limpia las imágenes de los metadatos como cámaras, kanvas, celulares, etc
+**pexels   es una página que contiene imágenes gratuitas
+
+		*** centrar elementos ***
+		https://www.freecodecamp.org/espanol/news/centrar-en-html-div-con-css/
+		margin: 0 auto; puede centrar horizontalmente
+
+	src y href
+	src es la ruta a un recurso, durante el tiempo que el navegador esté cargando el recurso el resto del código se pausará.
+	href se procesa en paralelo, por eso es más útil para cargar cosas como por ejemplo el documento css donde tengo los estilos de la página.
+
+Formularios
+	lista de types en w3school: https://www.w3schools.com/html/html_form_input_types.asp
+	label for="alpha"------input id="alpha"	**** el for de label tiene que coinsidir con el id del[o los] input con el que se relacionará .
+	
+	BEM
+	Box Element Modifier: es un standard que determina una forma adecuada de nombrar a las
+	clases de elementos en CSS. Una estandarización. Ver más adelante.
+
+Pseudo clases y pseudo elementos
+	clases: se indica con  body:hober { } 
+			definen el estilo de un estado especial de un elemento.
+	elementos: se indican con body::after {content: " | "}
+			definen el estilo de una parte específica de un elemento.
+			
+Orden de prioridad para CSS:
+primero están los !important en el archivo css
+después están los estilos en el archivo de html <style></style>
+luego están los IDs, se llaman con #id_nombre y son únicos
+siguen los class, se llaman con .nombre_clase  y puede haber varios
+siguen los tags como <p>, <div>, etc	tienen menor importancia que los anteriores.
+
+
+		**** combinadores ****
+		
+Permiten combiar varios selectores diferentes para lograr mayor especificidad.
+
+div + p {}			hermanos adyacente (funciona si p es adyacente a div, para todo p)
+div ~ p {}			hermanos general	(para todo p con padre div en comun)
+div > p {}			hijo 	(para todo p que tenga como padre directo un div)
+div p	{}			desencadenado	(para todo p que tenga un div como padre, aunque no sea directamente)
+
+	Juego	https://flukeout.github.io/#
+	
+		**** Medidas ****
+absolutas:
+	px
+	%	se calcula el porcentage de la medida estipulada por el navegador
+	
+relativas:
+	em	toma el tamaño que tenga el padre directo.
+	rem	toma el tamaño de la etiqueta root de nuestro proyecto (html)
+	para usar rem como medida standard: html font size 62.5% y cada rem serán 10px
+	max-width: establece un tamaño máximo para un elemento, útil para responsive
+	min-height: establece un mínimo para el caso de que el elemento no contenga nada, si tuviese contenido que rebase ese espacio el elemento se agranda para abarcarlo todo.
+
+
+		**** position ****
+La posición por defecto de CSS es static. Cuando está así no se puede usar los parámetros [bottom, top, left, right].
+
+	
+	Absolute: 
+	
+	
+	
+		**** flexbox ****
+guia en internet: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+	
