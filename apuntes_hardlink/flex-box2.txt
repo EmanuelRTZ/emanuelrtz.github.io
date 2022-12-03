@@ -60,8 +60,69 @@ align-content: establece la fomra en que múltiples líneas se separan unas de o
 				stretch: Las líneas se estiran para ajustarse al contenedor.
 				
 
-				
+	********** Agrego lo de la clase de platzi **************
+	
+align-items: strech 	estira el tamaño de los contenedores hijo hasta el final del flex padre.
+						So el contenedor hijo tiene un tamaño especificado este comando no hace nada.
 
+align-items: baseline 	toma el espacio del contenido, achica el tamaño del contenedor hijo hasta rodear el texto
+						de igual manera no funciona si el alto está definido 
+						
+flex-grow: 1;			esta propiedad hace que los elementos crezcan y tomen el tamaño del contenedor padre en ambos 
+						ejes, generalmente cuando el navegador se agranda.
+
+flex-basis: auto / content / tamaño			determina el tamaño mínimo que tendrá el elemento si la pantalla se 
+											achica. content tiene el tamaño del contenido o se puede agregar más 
+											indicando los pixeles, rem, etc. usar con flex-grow: 1;
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 				
 				
 

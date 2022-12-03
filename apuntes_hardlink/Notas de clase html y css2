@@ -71,5 +71,46 @@ La posición por defecto de CSS es static. Cuando está así no se puede usar lo
 		**** flexbox ****
 guia en internet: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
+		*** Variables en CSS ***
+se declaran dentro de un selector, generalmente se hace dentro de :root (que hace referencia al html).
+El nombre tiene que empezar con dos guiones y distingue entre mayus y minus. ej 
+: root {
+	--primary-color: #FF56FF
+}
+
+para utilizar la vaiable creada se usa var(--primary-color).
+
+se puede cambiar el valor de la variable re-definiéndola en otra llamada. ej:
+
+h1 { 
+	--primary-color: red;
+	background-color: var(--primary-color)
+}
+
+
+		*** Fuentes personalizadas ***
+		
+Buscar en google fonts la deseada. buscar el link con formato para HTML <link>. Pegar dentro del head del index
+ * solo cargar una fuente por archivo
+ * ponerlas siempre en el head
+ 
+
+
+
+		**** Responsive design - media queries ****
+		
+Break-point: se trata de puntos límite en los que la configuración del contenido cambia para adaptarse a la resolución del dispositivo que va a mostrar la página web.
+Generalmente se usa a regla "mobile first" donde se empieza por definir los tamaños para que el contenido sea renderizado en un dispositivo mobily a partir de esta medida, luego, para pantallas más grandes.
+
+Se pueden indicar las diferentes configuraciones en CSS y en el HTML.
+La primera, en CSS no es considerada una buena práctica. 
+	@media (min-width: 480px)
+	......
+	@media (min-width 768px)
+	......
+and so on..
+
+La segunda forma es colocando varios archivos de CSS en el archivo HTML y configurándolos para que se use alguno dependiendo de la resolución del dispositivo.
+<link href="tables.css" rel="stylesheet" media="screen and (min-width: 768px)">
 
 	
