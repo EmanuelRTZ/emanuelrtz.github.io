@@ -54,6 +54,7 @@ html {
   flex-direction: column;
   border: solid 1px black;
   flex-grow: 1;
+  background-color: rgba(95, 155, 155, 0.461);
   
 
 }
@@ -73,7 +74,7 @@ html {
 .body .main .aside .div {
   width: 20rem;
   height: 20rem;
-  background-color: #a1a6b4;
+  background-color: hsla(224, 44%, 52%, 0.368);
   border-radius: 5px;
   display: flex;
   align-items: center;
