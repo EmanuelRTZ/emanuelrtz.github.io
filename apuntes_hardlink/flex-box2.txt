@@ -29,20 +29,21 @@ flex-direction: define la dirección de los elementos en el contendor.
 	*cuando uso reverse, flex-end y start se invierten.
 	*cuando uso column justify-content y align-items se invierten en loque hacen cada una.
 	
-order: para elementos individuales, por defecto los elementos tienen un valor de order 0, se puede usar números enteros positivos o negativos para indicar las posiciones de los elementos.
+order: 			para elementos individuales, por defecto los elementos tienen un valor de order 0, se puede usar números enteros positivos o negativos para 
+				indicar las posiciones de los elementos.
 
-align-self: acepta los mismo valores que align-items y sus valores son usados para un elemento específico.
+align-self: 	acepta los mismo valores que align-items y sus valores son usados para un elemento específico.
 
 
-flex-wrap: decide de qué forma se van a distribuir elementos que no entran correctamente en el tamaño del contenedor.
+flex-wrap: 		decide de qué forma se van a distribuir elementos que no entran correctamente en el tamaño del contenedor.
 
 				nowrap: Cada elemento se ajusta en una sola línea.
 				wrap: los elementos se envuelven alrededor de líneas adicionales.
 				wrap-reverse: Los elementos se envuelven alrededor de líneas adicionales en reversa.	
 
-flex-flow:	es una combinación de flex-direction flew-wrap.
+flex-flow:		es una combinación de flex-direction flew-wrap.
 
-sintaxis: se ponen los dos valores separados por un espacio.
+sintaxis: 		se ponen los dos valores separados por un espacio.
 
 #rana {
 	display: flex;
@@ -50,7 +51,9 @@ sintaxis: se ponen los dos valores separados por un espacio.
 }
 
 
-align-content: establece la fomra en que múltiples líneas se separan unas de otras. align-content determina el espacio entre las líneas, mientras que align-items determina como los elementos en su conjunto están alineados dentro del contenedor. Cuando hay solo una línea, align-content no tiene efecto.
+align-content: 	establece la fomra en que múltiples líneas se separan unas de otras. align-content determina el espacio entre las 
+				líneas, mientras que align-items determina como los elementos en su conjunto están alineados dentro del contenedor.
+				Cuando hay solo una línea, align-content no tiene efecto.
 
 				flex-start: Las líneas se posicionan en la parte superior del contenedor.
 				flex-end: Las líneas se posicionan en la parte inferior del contenedor.
