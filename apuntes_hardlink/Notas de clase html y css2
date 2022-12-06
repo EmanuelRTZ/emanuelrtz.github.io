@@ -119,7 +119,10 @@ La segunda forma es colocando varios archivos de CSS en el archivo HTML y config
 Los media queries en el archivo CSS siempre tienen que ir en la parte inferior, al final del código.
 
 
+******** Colocar footer abajo con flex *******
 
+body tiene que tener min-heigth: 100vh
+footer tiene que tener margin-top: auto
 
 
 
