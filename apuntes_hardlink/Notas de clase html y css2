@@ -113,4 +113,31 @@ and so on..
 La segunda forma es colocando varios archivos de CSS en el archivo HTML y configurándolos para que se use alguno dependiendo de la resolución del dispositivo.
 <link href="tables.css" rel="stylesheet" media="screen and (min-width: 768px)">
 
+
+		*** mostly fluid ***
+		
+Los media queries en el archivo CSS siempre tienen que ir en la parte inferior, al final del código.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
