@@ -14,104 +14,53 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 
 .container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  height: 10rem;
-  ;
-  border-radius: 10px;
-  align-items: center;
-  margin-right: 20px;
-  
-}
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr) );
+  margin: 20px 5px;
+  color:antiquewhite;
 
-.container .imagen .imagen_foto {
-  max-height: 10rem;
-  border-radius: 10px;
-  margin-left: 20px;
-  margin-top: 20px;
-}
-
-.pseudo_h1 {
-  margin-left: 20px;
-  margin-top: 60px;
-}
-.lorem {
-  margin-left: 40px;
-  margin-top: 40px;
-  font-size: 1.5rem;
 
 }
 
-picture {
-  height: 50rem;
-  display: inline;
-}
-
-.imagensita {
-  height: 26rem;
-  margin-left: 40px ;
-  margin-top: 40px;
+.imagen_logo {
+  height: 8rem;
   border-radius: 5px;
-  border: solid #333 5px;
-  display: inline;
 }
 
-.lista_3 {
+
+
+.lista_item1, .lista_item2, .lista_item3, .lista_item4 {
   font-family: monospace;
   font-size: 1.5rem;
-  display: inline;
-}
+  align-self:center ;
+  justify-self: center;
+  border: 10px;
 
-
-.container .cuad {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-  font-family: monospace;
-  width: 10rem;
-  height: 5rem;
-  background-color: #333;
-  color: rgb(155, 155, 155);
-  font-size: 1.3rem;
-  margin: 0 10px;
-  border-radius: 3px;
 
 }
 
-.container .cuadrado1 {
-  margin-left: auto;
-}
-
-.container .cuadrado2 {
-  /*margin-right: auto;*/
-}
 
 main {
   height: 100vh;
-  color: rgb(155, 155, 155);
-  font-family: monospace;
-  font-size: 2.5rem;
+  width: 100vw;
 }
+
 
 footer {
-  height: 3rem;
   background-color: #333;
   color: rgb(155, 155, 155);
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
   align-items: center;
+  justify-items: center;
   font-family: monospace;
-  
-}
-footer .pie_pag {
-  margin-left: 20px;
+  width: 100vw;
+  margin-top: auto;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr) );
+
 }
 
+
 footer .facebook{
-  margin-left: auto;
   margin-right: 20px;
   
 }
